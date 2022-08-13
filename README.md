@@ -27,4 +27,11 @@
     7) Max length or bytes: max allowed per message or the quantitity messages inside the queue in terms of bytes. You can decide decide to receive the new one, delete the last one, etc.
     
 - Dead Letter Queues:
-  1) 
+  1) some messages cannot be delivered for some reason
+  2) they can be fowarded for a specific exchange that routes the traffic for a dead letter queue
+  3) these messages can be consumed later. we can put some logs on it to comprehend later why it was not consumed. 
+
+- Lazy Queues:
+  1) Messages are saved on disks.
+  2) high requirement in IO
+  3) when we have millions of messages in a queue, for any reason, there is the posibility to free memory and send specific messages in the disk
