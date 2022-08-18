@@ -38,9 +38,9 @@
   
 - Reliability (Confiability):
   1) Consumer Acknowledgment: the consumer says: "I received!"
-    1) Basic Ack: the consumer says "ack", everything is ok, I received.
-    2) Basic Reject: the consumer reject, throws an exception, or whatever. It sends the message back to the queue
-    3) Basic Nack: the same as the reject, but it can reject more than one message at the same time
+    - Basic Ack: the consumer says "ack", everything is ok, I received.
+    - Basic Reject: the consumer reject, throws an exception, or whatever. It sends the message back to the queue
+    - Basic Nack: the same as the reject, but it can reject more than one message at the same time
   3) Publisher Confirm: everytime that the publisher sends a message, we have sure that it arrived at the exchange. the message has an id (the publisher gives the id, it is an integer.). If it did not arrive at the exchange, the exchange sends a nack to the publisher
   4) Queues and Messages durable: can persists in disk (it bocomes a little bit slow)
 
