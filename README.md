@@ -34,4 +34,8 @@
 - Lazy Queues:
   1) Messages are saved on disks.
   2) high requirement in IO
-  3) when we have millions of messages in a queue, for any reason, there is the posibility to free memory and send specific messages in the disk
+  3) when we have millions of messages in a queue, for any reason, there is the posibility to free memory and send specific messages in the diskOBS:
+  
+OBS:
+- Once the message is consumed by one consumer, the other consumer will not get it anymore, even if both are consuming the same queue
+- Simulator: http://tryrabbitmq.com/
