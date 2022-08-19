@@ -16,7 +16,9 @@
 - Queues:
   1) FIFO: By default, First-in First-out!
   2) Properties: 
-    1) Durable: if it has to be saved even after the broker restart
+    1) Durability:
+      - Durable: if it has to be saved even after the broker restart. 
+      - Transient: if the machine turns down, the queue will not be available
     2) Auto-delete: remove the queue if the consumer disconnects.
     3) Expiry: if there is no client consuming this queue for X time, destroy.
     4) Message-TTL: Time to Live. If no one consumes the message during this time, the message will be removed from the queue.
@@ -46,4 +48,7 @@
 
 OBS:
 - Once the message is consumed by one consumer, the other consumer will not get it anymore, even if both are consuming the same queue
+- RabbitMQ is scalable with more than one node.
+- Virtual Hosts: A way to separate contexts. A Virtual Host doesn´t talk with another Virtual Host.
+- By default, the RabbitMQ comes with default exchanges (but it is good to use it only for test). The correct way to do is to create a new exchange to work propertly.
 - Simulator: http://tryrabbitmq.com/
