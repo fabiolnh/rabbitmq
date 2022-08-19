@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    rabbit:
+        image: 'rabbitmq:3-management'
+        container_name: rabbitmq
+        hostname: rabbitmq
+        ports:
+            - 15672:15672 # web
+            - 5672:5672 # microservices connects on it
+        environment:
+            - RABBITMQ_ERLANG_COOKIE: 123123
+            - RABBITMQ_DEFAULT_USER: rabbitmq
+            - RABBITMQ_DEFAULT_PASS: rabbitmq
+            - RABBITMQ_DEFAULT_VHOST: "/"
+        networks:
+            - codeflix
+
+networks:
+    rabbit:
+        driver: bridge
